@@ -1,0 +1,1 @@
+- there are passwords and other sensitive information hardcoded in configuration files. Such information in a real-world scenario should come via a secure mechanism e.g. via environment variables, services like KeyVault, build-time templating, etc. **Decision**: I will leave them as they are, not production ready.
