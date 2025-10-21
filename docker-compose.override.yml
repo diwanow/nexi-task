@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # Development overrides
+  product-catalog-service:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    volumes:
+      - ./src/Services/ProductCatalog:/app
+    command: ["dotnet", "watch", "run", "--urls", "http://+:80"]
+
+  shopping-cart-service:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    volumes:
+      - ./src/Services/ShoppingCart:/app
+    command: ["dotnet", "watch", "run", "--urls", "http://+:80"]
+
+  order-management-service:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    volumes:
+      - ./src/Services/OrderManagement:/app
+    command: ["dotnet", "watch", "run", "--urls", "http://+:80"]
+
+  user-management-service:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    volumes:
+      - ./src/Services/UserManagement:/app
+    command: ["dotnet", "watch", "run", "--urls", "http://+:80"]
+
+  email-service:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    volumes:
+      - ./src/Services/EmailService:/app
+    command: ["dotnet", "watch", "run", "--urls", "http://+:80"]
+
+  api-gateway:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    volumes:
+      - ./src/Gateway:/app
+    command: ["dotnet", "watch", "run", "--urls", "http://+:80"]
+
+  frontend:
+    environment:
+      - REACT_APP_API_BASE_URL=http://localhost:5000
+    volumes:
+      - ./src/Frontend:/app
+      - /app/node_modules
+    command: ["npm", "start"]
