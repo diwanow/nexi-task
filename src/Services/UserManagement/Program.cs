@@ -77,7 +77,7 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddHealthChecks()
     .AddDbContextCheck<UserManagementDbContext>()
     .AddRedis(builder.Configuration.GetConnectionString("Redis") ?? "localhost:6379")
-    .AddRabbitMQ(builder.Configuration.GetConnectionString("RabbitMQ") ?? "amqp://localhost:5672");
+    .AddRabbitMQ(rabbitConnectionString: builder.Configuration.GetConnectionString("RabbitMQ") ?? "amqp://localhost:5672");
 
 // Add CORS
 builder.Services.AddCors(options =>

@@ -1,10 +1,11 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using UserManagement.Application.Common.Interfaces;
 using UserManagement.Domain.Entities;
 
 namespace UserManagement.Infrastructure.Persistence;
 
-public class UserManagementDbContext : IdentityDbContext<ApplicationUser>
+public class UserManagementDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
 {
     public UserManagementDbContext(DbContextOptions<UserManagementDbContext> options) : base(options)
     {
