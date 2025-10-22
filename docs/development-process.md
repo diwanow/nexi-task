@@ -15,3 +15,8 @@ General direction:
 - continuous documentation - I will continuously document my thought process, along with major findings and decisions (fix or describe).
 - I will mostly ignore the frontend (unless it doesn't start) as the position is for backend.
 - After the code review, I will run the system in full.
+
+Progress:
+- Reviewed most of the components.
+- Ran only UserManagement through VS without local postgres, so it failed immediately but at least it compiles. No time for the rest.
+- I haven't tested the makefile either.
